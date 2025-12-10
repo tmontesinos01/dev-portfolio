@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { User } from "lucide-react"
+import Image from "next/image"       // ✅ así, sin llaves
 
 export function About() {
     return (
@@ -11,12 +11,17 @@ export function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="grid md:grid-cols-[1fr_2fr] gap-12 items-start"
+                className="grid md:grid-cols-[1fr_2fr] gap-12 items-center"
             >
                 <div className="relative">
                     <div className="aspect-square w-full max-w-[250px] bg-muted rounded-2xl flex items-center justify-center overflow-hidden mx-auto md:mx-0">
-                        <User className="w-24 h-24 text-muted-foreground/50" />
-                        {/* Replace with <Image /> when available */}
+                        <Image
+                            src="/yo-profile.jpg"
+                            alt="Foto de perfil de Tomás"
+                            width={250}
+                            height={250}
+                            className="object-cover"
+                            />
                     </div>
                     <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-brand/10 rounded-full -z-10 blur-2xl" />
                 </div>
