@@ -1,46 +1,28 @@
-"use client"
-
-import { motion } from "framer-motion"
-import Image from "next/image"       // ✅ así, sin llaves
-
 export function About() {
     return (
         <section id="about" className="py-24 px-6 md:px-20 max-w-5xl mx-auto">
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="grid md:grid-cols-[1fr_2fr] gap-12 items-center"
-            >
-                <div className="relative">
-                    <div className="aspect-square w-full max-w-[250px] bg-muted rounded-2xl flex items-center justify-center overflow-hidden mx-auto md:mx-0">
-                        <Image
-                            src="/yo-profile.jpg"
-                            alt="Foto de perfil de Tomás"
-                            width={250}
-                            height={250}
-                            className="object-cover"
-                            />
+            <div data-reveal className="space-y-12">
+                <div className="max-w-3xl">
+                    <div className="space-y-4 text-left">
+                        <h2 className="text-3xl font-bold tracking-tight">About Me</h2>
                     </div>
-                    <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-brand/10 rounded-full -z-10 blur-2xl" />
-                </div>
 
-                <div className="space-y-6">
-                    <h2 className="text-3xl font-bold tracking-tight">About Me</h2>
-                    <div className="space-y-4 text-muted-foreground leading-relaxed">
+                    <div className="mt-6 space-y-6 text-muted-foreground leading-relaxed text-left text-base md:text-lg">
                         <p>
-                            I'm Tomas Alejandro Montesinos Martínez, a Full Stack Developer with over 5 years of professional experience building scalable web applications, management systems, and automated workflows. I specialize in creating end-to-end solutions that solve real-world problems.
+                            I'm Tomas, a Full-Stack Engineer with over 5 years of experience building scalable systems and real-world software solutions.
                         </p>
                         <p>
-                            My expertise spans both frontend and backend development, with a strong focus on database optimization, API integrations, and systems automation. I've worked extensively in the healthcare sector and developed complex systems including electronic invoicing platforms, real-time messaging integrations, and IoT control systems.
+                            I specialize in backend architecture with .NET and modern frontend development using React and Next.js. Most of my work has focused on designing administrative and healthcare management systems, where reliability, performance, and maintainability truly matter.
                         </p>
                         <p>
-                            I believe in clean architecture, minimalist design, and writing maintainable code that stands the test of time. My approach combines technical excellence with practical problem-solving to deliver solutions that truly make a difference.
+                            Throughout my career, I've developed electronic invoicing platforms, real-time integrations, and IoT-based control systems — always aiming to build solutions that are not only functional, but scalable and resilient.
+                        </p>
+                        <p>
+                            I care deeply about clean architecture, long-term code quality, and practical system design. For me, good software is not just about shipping features — it's about building systems that stand the test of time.
                         </p>
                     </div>
                 </div>
-            </motion.div>
+            </div>
         </section>
     )
 }

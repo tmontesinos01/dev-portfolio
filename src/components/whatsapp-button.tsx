@@ -1,18 +1,10 @@
-"use client"
-
-import { motion } from "framer-motion"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { getWhatsAppUrl } from "@/lib/whatsapp-config"
 
 export function WhatsAppButton() {
     return (
-        <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1, duration: 0.3 }}
-            className="fixed bottom-6 right-6 z-50"
-        >
+        <div data-reveal data-reveal-delay={1000} className="fixed bottom-6 right-6 z-50">
             <Button
                 asChild
                 size="icon"
@@ -28,7 +20,6 @@ export function WhatsAppButton() {
                     </svg>
                 </Link>
             </Button>
-        </motion.div>
+        </div>
     )
 }
-
